@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React from "react";
+import Header from "./components/Header/Header";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Container } from 'react-bootstrap'
+import Routes from './routes';
 import './App.css';
+const App = () => {
+        return (
+                <div>
+                        <Router>
+                                <Header />
+                                <main className='py-3' style={{ backgroundColor: "lightblue" }}>
+                                        <Container>
+                                                <div className="auth-wrapper">
+                                                        <div className="auth-inner">
+                                                                <Routes></Routes>
+                                                        </div>
+                                                </div>
+                                        </Container>
+                                </main>
+                        </Router>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+                </div>
+        )
 }
 
 export default App;
