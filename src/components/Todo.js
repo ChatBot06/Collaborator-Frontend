@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Todo = ({ onClick, completed, task_name }) => (
-    <ul class="list-group">
+    <ul className="list-group">
         <li
             onClick={onClick}
-            class="list-group-item"
+            className="list-group-item"
             style={{
                 textDecoration: completed ? 'line-through' : 'none'
             }}

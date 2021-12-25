@@ -21,7 +21,7 @@ const Home = props => {
     <div >
       <AddToDo />
       <VisibleToDoList />
-      <Footer />
+      {/* <Footer /> */}
 
     </div>
   );

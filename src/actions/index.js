@@ -68,14 +68,13 @@ export const listUsers = () => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState()
 
-    const config = {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    }
+    // const config = {
+    //   headers: {
+    //     Authorization: `Bearer ${userInfo.token}`,
+    //   },
+    // }
 
-    const { data } = await axios.get('http://localhost:5000/api/users', config)
-    console.log("dddddddd", data)
+    const { data } = await axios.get('http://localhost:5000/api/users')
 
     dispatch({
       type: USER_LIST_SUCCESS,

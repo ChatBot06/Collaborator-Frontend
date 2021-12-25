@@ -1,11 +1,13 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { addTodo } from '../actions'
-import { Container } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
+import { addTodo } from '../actions';
+import { Container } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
 
 const AddTodo = ({ dispatch }) => {
     let input
-
+    const userList = useSelector((state) => state.userList)
+    console.log("userList", userList)
     return (
         <Container>
             <form onSubmit={e => {
@@ -16,13 +18,19 @@ const AddTodo = ({ dispatch }) => {
                 dispatch(addTodo(input.value))
                 input.value = ''
             }}>
-                <div class="form-group">
+                <div className="form-group">
                     <label>Task Name</label>
-                    <input ref={node => input = node} class="form-control" />
+                    <input ref={node => input = node} className="form-control" />
                     <label>Assignee Name</label>
-                    <input class="form-control" />
+                    {/* <input className="form-control" /> */}
+                    <select className="form-select" aria-label="Default select example">
+                        <option>Select the Assignee</option>
+                        {userList.users && userList.users.map(user =>
+                            <option key={user._id} value="1">{user.name}</option>
+                        )}
+                    </select>
                     <br />
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" className="btn btn-primary">
                         Add Todo
                     </button>
                 </div>

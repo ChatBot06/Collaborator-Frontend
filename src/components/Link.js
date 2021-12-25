@@ -5,7 +5,7 @@ const Link = ({ active, children, onClick }) => (
     <button
         onClick={onClick}
         disabled={active}
-        class="btn btn-secondary"
+        className="btn btn-secondary"
         style={{
             marginLeft: '4px',
         }}
