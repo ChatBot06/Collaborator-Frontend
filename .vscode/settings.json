@@ -1,6 +1,0 @@
-{
-    "emmet.showSuggestionsAsSnippets": true,
-    "emmet.includeLanguages": {
-        "csharp":"html"
-    }
-}
