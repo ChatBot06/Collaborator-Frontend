@@ -19,8 +19,8 @@ const Home = props => {
   return (
     // className={styles.root}
     <div >
-      <AddToDo />
-      <VisibleToDoList />
+      {/* <AddToDo />
+      <VisibleToDoList /> */}
       {/* <Footer /> */}
 
     </div>
